@@ -79,7 +79,7 @@ export default {
         waitlist:{
           fullname:"",
           email:"",
-          device:""
+          device:"",
           phone:""
         }
         
