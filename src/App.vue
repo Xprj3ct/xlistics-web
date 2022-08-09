@@ -10,7 +10,7 @@
             <v-col cols="6">
                 <h5 class="white--text font-weight-thin">Hello There,</h5>
                 <h3 class="orange--text font-weight-black text-darken-4 top"> Easy Living with Logistics/Proxy services.</h3>
-                <h6 class="white--text font-weight-thin text-center" >We make it easy for you to manage your shipments 
+                <h6 class="white--text font-weight-regular text-center" >We make it easy for you to manage your shipments 
                   and logistics online, From finding a courier/proxy that is ready to be at your service anytime anywhere and on time.</h6>
                   <v-btn class="br " color="#111111"  ><v-img elevation="20" max-height="80" max-width="150" src="ga.png" /> </v-btn>
             </v-col>
