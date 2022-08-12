@@ -1,6 +1,6 @@
 
 <template>
-    <v-container fluid >
+    <v-container fluid class="wvv">
     <v-row >
         <v-btn 
         color="#111111"
@@ -92,5 +92,7 @@ export default {
 </script>
 
 <style>
-
+.wvv{
+    width: 100%;
+}
 </style>
