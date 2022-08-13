@@ -12,13 +12,20 @@
           max-width="500px"
         >
     <v-card>
+      <v-form
+              ref="form"
+              v-model="valid"
+                lazy-validation >
         <v-card-text color=black >
             <h4 class="mt-4">Be the first to Know</h4   >
-            <v-text-field label="Full name"></v-text-field>
-            <v-text-field label="Email"></v-text-field>
-            <v-text-field label="Phone No"></v-text-field>
+            
+            <v-text-field v-model="name" :rules="nameRules" required label="Full name"></v-text-field>
+            <v-text-field v-model="email" :rules="emailRules" required label="Email"></v-text-field>
+            <v-text-field required label="Phone No"></v-text-field>
             <v-select 
-          :items="items"
+          :items="items" required
+          :rules="[v => !!v || 'Item is required']"
+          v-model="select"
           label="Preferred Device"
         ></v-select>
             <!-- <small class="white--text">* This doesn't actually save.</small> -->
@@ -28,13 +35,15 @@
               <v-spacer></v-spacer>
 
               <v-btn
-                text
-                color="primary"
-                @click="dialog = false"
+                :disabled="!valid"
+      color="success"
+      class="mr-4"
+      @click="validate"
               >
                 Submit
               </v-btn>
             </v-card-actions>
+        </v-form>
           </v-card>
         </v-dialog>
         </v-row>
@@ -44,11 +53,27 @@
 <script>
 export default {
     data: () => ({
+        valid: true,
+      name: '',
+      nameRules: [
+        v => !!v || 'Name is required',
+        v => (v && v.length <= 10) || 'Name must be less than 10 characters',
+      ],
+      email: '',
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      ],
         items: ['ANDROID', 'IOS'],
         
         dialog: false,
         
-    })
+    }),
+    methods: {
+      validate () {
+        this.$refs.form.validate()
+      }
+    }
 }
 </script>
 
