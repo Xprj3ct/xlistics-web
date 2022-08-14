@@ -8,24 +8,24 @@
       flat
       tile
     >
-      <v-card-title >
-        <strong class="caption font-weight-thin">Get connected with us on social networks!</strong>
-
-        <v-spacer></v-spacer>
-
+     <v-card-text>
         <v-btn
           v-for="icon in icons"
           :key="icon"
-          class="mx-2"
-          dark
-          icon
+          class="mx-4 white--text"
+          icon center
+          href="https://twitter.com/Xlistics"
         >
           <v-icon size="24px">
             {{ icon }}
           </v-icon>
         </v-btn>
-      </v-card-title>
+      </v-card-text>
 
+      <v-card-text class="white--text pt-0">
+        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. ontes, nascetur ridiculus mus.
+      </v-card-text>
+      <v-divider></v-divider>
       <v-card-text class="py-2 caption font-weight-thin white--text text-center">
         {{ new Date().getFullYear() }} — <strong class="caption font-weight-thin">xlistics</strong>
       </v-card-text>
@@ -39,7 +39,7 @@
       icons: [
         
         'mdi-twitter',
-        'mdi-instagram',
+        
       ],
     }),
   }
