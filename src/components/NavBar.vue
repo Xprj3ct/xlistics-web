@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar app color="#111111" dark flat class="px-8">
+    <v-app-bar app color="#111111" dark flat class="px-8 nvv">
         <v-btn icon>
         <v-img
           :src="require('../assets/png.png')"
@@ -27,5 +27,7 @@ export default {
 </script>
 
 <style>
-
+.nvv{
+    width: 100%;
+}
 </style>

@@ -1,5 +1,6 @@
+
 <template>
-    <v-container fluid >
+    <v-container fluid class="wvv">
     <v-row >
         <v-btn 
         color="#111111"
@@ -18,15 +19,15 @@
                 lazy-validation >
         <v-card-text color=black >
             <h4 class="mt-4">Be the first to Know</h4   >
-            
-            <v-text-field v-model="name" :rules="nameRules" required label="Full name"></v-text-field>
-            <v-text-field v-model="email" :rules="emailRules" required label="Email"></v-text-field>
-            <v-text-field required label="Phone No"></v-text-field>
+            <v-text-field label="Full name"></v-text-field>
+            <v-text-field label="Email"></v-text-field>
+            <v-text-field label="Phone No"></v-text-field>
             <v-select 
           :items="items" required
           :rules="[v => !!v || 'Item is required']"
           v-model="select"
           label="Preferred Device"
+         
         ></v-select>
             <!-- <small class="white--text">* This doesn't actually save.</small> -->
             </v-card-text>
@@ -35,10 +36,9 @@
               <v-spacer></v-spacer>
 
               <v-btn
-                :disabled="!valid"
-      color="success"
-      class="mr-4"
-      @click="validate"
+                text
+                color="primary"
+                @click="dialog = false"
               >
                 Submit
               </v-btn>
@@ -65,7 +65,6 @@ export default {
         v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
       ],
         items: ['ANDROID', 'IOS'],
-        
         dialog: false,
         
     }),
@@ -75,8 +74,28 @@ export default {
       }
     }
 }
+
+// export default {
+//     data: () => ({
+//         items: ['ANDROID', 'IOS'],
+//         dialog: false,
+//         waitlist:{
+//           fullname:"",
+//           email:"",
+//           device:"",
+//           phone:""
+//         }
+        
+//     }),
+//     methods: {
+//       handleWait(this.waitlist)
+//     }
+
+// }
 </script>
 
 <style>
-
+.wvv{
+    width: 100%;
+}
 </style>

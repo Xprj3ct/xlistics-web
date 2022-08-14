@@ -1,5 +1,5 @@
 <template>
-  <v-app :style="{ background: $vuetify.theme.themes.dark.background }">
+  <v-app class="ovv" :style="{ background: $vuetify.theme.themes.dark.background }">
     <v-main>
       <NavBar/>
       <v-container fluid>
@@ -70,6 +70,10 @@ export default {
   width: 100%;
   
   padding: 2rem;
+}
+
+.ovv{
+  width: 100%;
 }
 
 </style>

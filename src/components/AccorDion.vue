@@ -1,6 +1,6 @@
 <template>
-  <div >
-    <v-img src="faq.png" contain max-height="100" max-width="300"/>
+  <div class="avv">
+    <v-img src="faq.png" contain max-height="100"  max-width="300"/>
 
     <v-expansion-panels>
       <v-expansion-panel class="mt-2">
@@ -81,5 +81,7 @@
 </template>
 
 <style>
-
+.avv{
+    width: 100%;
+}
 </style>
