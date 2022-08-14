@@ -19,9 +19,9 @@
                 lazy-validation >
         <v-card-text color=black >
             <h4 class="mt-4">Be the first to Know</h4   >
-            <v-text-field label="Full name"></v-text-field>
-            <v-text-field label="Email"></v-text-field>
-            <v-text-field label="Phone No"></v-text-field>
+            <v-text-field v-model="name" :rules="nameRules" required label="Full name"></v-text-field>
+            <v-text-field v-model="email" :rules="emailRules" required label="Email"></v-text-field>
+            <v-text-field v-model="phone" label="Phone No"></v-text-field>
             <v-select 
           :items="items" required
           :rules="[v => !!v || 'Item is required']"
@@ -36,9 +36,9 @@
               <v-spacer></v-spacer>
 
               <v-btn
-                text
-                color="primary"
-                @click="dialog = false"
+                
+                color="success"
+                v-on:click="handleWait"
               >
                 Submit
               </v-btn>
@@ -51,6 +51,10 @@
 </template>
 
 <script>
+import { addDoc, collection} from 'firebase/firestore'
+import db from '../firebase'
+
+
 export default {
     data: () => ({
         valid: true,
@@ -60,38 +64,45 @@ export default {
         v => (v && v.length <= 10) || 'Name must be less than 10 characters',
       ],
       email: '',
+      phone:'',
       emailRules: [
         v => !!v || 'E-mail is required',
         v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
       ],
+        select: '',
         items: ['ANDROID', 'IOS'],
         dialog: false,
         
     }),
     methods: {
-      validate () {
-        this.$refs.form.validate()
+
+      async handleWait () {
+        if(this.name != '' && this.email != '' && this.phone != '', this.select != ''){
+           try {
+                await addDoc(collection(db, `waitList`), {
+                    fullname: this.name,
+                    email: this.email,
+                    phone: this.phone,
+                    device: this.select
+                })
+  
+          console.log("success")
+          this.dialog = false
+                
+          } catch (err) {
+              console.log(err)
+            
+          }
+        }
+        else {
+          console.log("nothing in form")
+        }
+        
       }
     }
 }
+      
 
-// export default {
-//     data: () => ({
-//         items: ['ANDROID', 'IOS'],
-//         dialog: false,
-//         waitlist:{
-//           fullname:"",
-//           email:"",
-//           device:"",
-//           phone:""
-//         }
-        
-//     }),
-//     methods: {
-//       handleWait(this.waitlist)
-//     }
-
-// }
 </script>
 
 <style>
