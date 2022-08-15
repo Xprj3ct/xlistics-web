@@ -8,7 +8,6 @@
               <v-img class="imp" src="phone.png" contain  max-height="300"></v-img>
             </v-col>
             <v-col cols="6">
-                <h5 class="white--text font-weight-thin">Hello There,</h5>
                 <h3 class="red--text font-weight-black text-darken-4 top" max-width="100"> Easy Living with Logistics/Proxy services.</h3>
                 <h6 class="white--text font-weight-regular text-center" >We make it easy for you to manage your shipments 
                   and logistics online, From finding a courier/proxy that is ready to be at your service anytime anywhere and on time.</h6>
@@ -23,8 +22,8 @@
             ></v-divider>
           </v-row >
       </v-container>  
-              <AboutUs class="first"/>
-              <AccorDion class="first"/>
+              <AboutUs id="About" class="first"/>
+              <AccorDion id="FAQ" class="first"/>
              
     </v-main>
     <FooTer/>
