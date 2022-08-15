@@ -22,7 +22,7 @@
         </v-btn>
       </v-card-text>
 
-      <v-card-text center class="grey--text pt-0">
+      <v-card-text center class="grey--text text-center pt-0">
         We simplify  your logistics  services and connect you to fast and reliable couriers/proxy.
       </v-card-text>
       <v-divider></v-divider>
