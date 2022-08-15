@@ -9,17 +9,21 @@
             </v-col>
             <v-col cols="6">
                 <h5 class="white--text font-weight-thin">Hello There,</h5>
-                <h3 class="orange--text font-weight-black text-darken-4 top" max-width="100"> Easy Living with Logistics/Proxy services.</h3>
+                <h3 class="red--text font-weight-black text-darken-4 top" max-width="100"> Easy Living with Logistics/Proxy services.</h3>
                 <h6 class="white--text font-weight-regular text-center" >We make it easy for you to manage your shipments 
                   and logistics online, From finding a courier/proxy that is ready to be at your service anytime anywhere and on time.</h6>
                   <v-btn class="br " max-height="80" max-width="120" color="#111111"  ><v-img elevation="20" max-height="80" max-width="100" src="ga.png" /> </v-btn>
             </v-col>
+            <v-divider
+              
+            ></v-divider>
             <WaitList class="top"/>
-            
-            
+            <v-divider
+              inset
+            ></v-divider>
           </v-row >
       </v-container>  
-             
+              <AboutUs class="first"/>
               <AccorDion class="first"/>
              
     </v-main>
@@ -32,6 +36,8 @@ import NavBar from "./components/NavBar.vue";
 import WaitList from "./components/WaitList.vue";
 import FooTer from "./components/FooTer.vue";
 import AccorDion from "./components/AccorDion.vue";
+import AboutUs from "./components/AboutUs.vue";
+
 
 
 
@@ -45,7 +51,8 @@ export default {
     NavBar,
     WaitList,
     FooTer,
-    AccorDion
+    AccorDion,
+    AboutUs
 }
 };
 </script>

@@ -22,8 +22,8 @@
         </v-btn>
       </v-card-text>
 
-      <v-card-text class="white--text pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. ontes, nascetur ridiculus mus.
+      <v-card-text center class="grey--text pt-0">
+        We simplify  your logistics  services and connect you to fast and reliable couriers/proxy.
       </v-card-text>
       <v-divider></v-divider>
       <v-card-text class="py-2 caption font-weight-thin white--text text-center">

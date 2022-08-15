@@ -1,8 +1,9 @@
 
 <template>
-    <v-container fluid class="wvv">
+    <v-container transition="slide-x-reverse-transition"
+       fluid class="wvv">
     <v-row >
-        <v-btn 
+        <v-btn  
         color="#111111"
         elevation="10"
         fab block @click="dialog = !dialog"
