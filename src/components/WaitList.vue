@@ -62,7 +62,7 @@ export default {
       name: '',
       nameRules: [
         v => !!v || 'Name is required',
-        v => (v && v.length <= 10) || 'Name must be less than 10 characters',
+        v => (v && v.length <= 100) || 'Name must be less than 100 characters',
       ],
       email: '',
       phone:'',
@@ -89,6 +89,10 @@ export default {
   
           console.log("success")
           this.dialog = false
+          this.fullName = ""
+          this.email = ""
+          this.phone = ""
+          this.device = ""
                 
           } catch (err) {
               console.log(err)
