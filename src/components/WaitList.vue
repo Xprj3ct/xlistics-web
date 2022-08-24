@@ -37,7 +37,7 @@
               <v-spacer></v-spacer>
 
               <v-btn
-                
+                :loading="loading"
                 color="success"
                 v-on:click="handleWait"
               >
@@ -58,11 +58,12 @@ import db from '../firebase'
 
 export default {
     data: () => ({
+      loading: false,
         valid: true,
       name: '',
       nameRules: [
         v => !!v || 'Name is required',
-        v => (v && v.length <= 10) || 'Name must be less than 10 characters',
+        v => (v && v.length <= 20) || 'Name must be less than 20 characters',
       ],
       email: '',
       phone:'',
@@ -78,6 +79,7 @@ export default {
     methods: {
 
       async handleWait () {
+        this.loading = true
         if(this.name != '' && this.email != '' && this.phone != '', this.select != ''){
            try {
                 await addDoc(collection(db, `waitList`), {
@@ -86,7 +88,7 @@ export default {
                     phone: this.phone,
                     device: this.select
                 })
-  
+          this.loading = false
           console.log("success")
           this.dialog = false
                 
