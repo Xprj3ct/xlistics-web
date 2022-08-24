@@ -64,6 +64,7 @@ export default {
       nameRules: [
         v => !!v || 'Name is required',
         v => (v && v.length <= 20) || 'Name must be less than 20 characters',
+
       ],
       email: '',
       phone:'',
@@ -79,9 +80,10 @@ export default {
     methods: {
 
       async handleWait () {
-        this.loading = true
+        
         if(this.name != '' && this.email != '' && this.phone != '', this.select != ''){
            try {
+            this.loading = true
                 await addDoc(collection(db, `waitList`), {
                     fullname: this.name,
                     email: this.email,
@@ -91,6 +93,10 @@ export default {
           this.loading = false
           console.log("success")
           this.dialog = false
+          this.fullName = ""
+          this.email = ""
+          this.phone = ""
+          this.device = ""
                 
           } catch (err) {
               console.log(err)
